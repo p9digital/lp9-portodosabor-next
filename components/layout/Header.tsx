@@ -8,6 +8,7 @@ const HeaderWrapper = styled.div<{home: boolean}>`
   background-color: ${(props) => props.theme.client.colors.primary};
   position: relative;
   padding: ${(props) => (props.home ? "5rem 0 2rem" : "5rem 0")};
+  width:100%;
 `;
 
 const HeaderContainer = styled.div<{home: boolean}>`

@@ -44,7 +44,7 @@ width: 100%;
 `;
 
 const FormButtonSucesso = styled(FormButton)`
-border-radius: 100px;
+border-radius: 25px;
 justify-content: center;
 margin: 0 auto;
 max-width: 40rem;
@@ -53,12 +53,12 @@ max-width: 40rem;
   max-width: 30rem;
 }
 &::after {
-  border-radius: 100px;
-  background-color: ${(props) => props.theme.client.colors.primary};
+  border-radius: 25px;
+  background-color: ${(props) => props.theme.client.colors.laranja};
 }
 &:hover {
-  background-color: ${(props) => props.theme.client.colors.vanilla};
-  color: ${(props) => props.theme.client.colors.primary};
+  background-color: ${(props) => props.theme.client.colors.secondary};
+  color: white;
 }
 `;
 
@@ -284,8 +284,8 @@ function FormularioContinue() {
             <FormFooterSucesso>
               <FormButtonSucesso
                 type="submit"
-                backColor="primary"
-                fontColor="vanilla"
+                backColor="laranja"
+                fontColor="white"
               >
                 CONCLUIR CADASTRO!
               </FormButtonSucesso>

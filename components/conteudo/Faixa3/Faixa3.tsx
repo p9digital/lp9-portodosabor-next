@@ -73,13 +73,10 @@ function Faixa3({ callForm }: Props) {
               </Faixa3Lista>
 
               <Faixa3Video>
-                <iframe
-                  title="video"
-                  src="https://www.youtube.com/embed/ZimpB_f0cS4?rel=0&loop=1&controls=0"
-                  frameBorder="0"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                />
+                <video width="320" height="240" controls>
+                  <source src="/videos/video.mp4" type="video/mp4" />
+                  <track kind="captions" />
+                </video>
               </Faixa3Video>
 
               <ButtonWrapper>

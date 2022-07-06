@@ -81,7 +81,8 @@ text-transform:uppercase;
 export const Faixa3Video = styled.div`
 margin:2rem 0 5rem;
 width:100%;
-iframe {
+iframe,
+video {
   height:352px;
   max-width:625px;
   width:100%;

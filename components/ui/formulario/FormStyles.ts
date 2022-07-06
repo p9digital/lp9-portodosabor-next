@@ -1,7 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import Button from "../buttons/Button";
 
-export const FormContainer = styled.div``;
+export const FormContainer = styled.div`
+max-width:400px;
+`;
 
 export const Form = styled.form`
 background: #FFFFFF;

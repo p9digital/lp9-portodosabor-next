@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Head from 'next/head';
-import Image from 'next/image';
 
 import Icon from '@/components/ui/icons/Icon';
 import Link from '@/components/ui/buttons/Link';
@@ -12,10 +11,11 @@ import { FaixaTextos, FaixaWrapperSimples } from '@/components/ui/faixas/FaixaSt
 
 import { getSessao } from '@/helpers/session';
 import { tags } from '@/helpers/dados';
+import Header from '@/components/layout/Header';
 
 export const FaixaWrapperFinal = styled(FaixaWrapperSimples)`
 align-items: center;
-background: url("/images/background-sucesso.jpg") no-repeat center center;
+background: url("/images/background-finalizado.jpg") no-repeat center center;
 background-size: cover;
 display: flex;
 flex-direction: column;
@@ -25,6 +25,7 @@ position: relative;
 
 ${FaixaTextos} {
   max-width: 900px;
+  padding:2rem 0 0;
 }
 `;
 
@@ -56,10 +57,10 @@ text-align: center;
 text-transform:uppercase;
 
 span {
-  color: ${(props) => props.theme.client.colors.darkVanilla};
+  color: ${(props) => props.theme.client.colors.laranja};
 }
 strong {
-  color: ${(props) => props.theme.client.colors.darkVanilla};
+  color: ${(props) => props.theme.client.colors.laranja};
 }
 
 @media (max-width:600px) {
@@ -68,7 +69,7 @@ strong {
 `;
 
 export const FinalizadoTexto = styled.p`
-color: ${(props) => props.theme.client.colors.darkVanilla};
+color: ${(props) => props.theme.client.colors.laranja};
 font-size:18px;
 margin-bottom:20px;
 
@@ -193,21 +194,10 @@ function Finalizado() {
         <meta property="og:url" content={tags.url} />
       </Head>
       <FaixaWrapperFinal>
-        <LogoWrapper>
-          <LogoContainer>
-            <Image
-              src="/images/logo.png"
-              alt="Logo Porto do Sabor"
-              layout="responsive"
-              width="240"
-              height="61"
-              priority
-            />
-          </LogoContainer>
-        </LogoWrapper>
+        <Header home={false} />
 
-        <FaixaTextos>
-          <TitleFinalizado fontColor="vanilla" margem="0 0 2rem">
+        <FaixaTextos style={{ minHeight: "calc(100vh - 525px)" }}>
+          <TitleFinalizado fontColor="laranja" margem="0 0 2rem">
             <strong>
               Recebemos seus dados,
               {" "}
@@ -215,14 +205,14 @@ function Finalizado() {
             </strong>
           </TitleFinalizado>
 
-          <FinalizadoTexto>
+          {/* <FinalizadoTexto>
             <strong>
               Você pode fazer o download da apresentação do nosso modelo de negócio no botão abaixo:
             </strong>
           </FinalizadoTexto>
-          {/* <LinkWrapper>
+          <LinkWrapper>
             <LinkDownload
-              backColor="primary"
+              backColor="secondary"
               fontColor="white"
               center="center"
               href="https://leadsp9-public-resources.s3.sa-east-1.amazonaws.com/arquivos-apresentacao/.pdf"
@@ -284,7 +274,7 @@ function Finalizado() {
                 cor="#FFFFFF"
                 icon="facebook-square"
               />
-              /portodosabor 
+              /portodosabor
             </a>
             <a
               href="https://www.instagram.com/portodosabor_oficial"

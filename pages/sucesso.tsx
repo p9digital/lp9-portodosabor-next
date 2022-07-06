@@ -11,29 +11,20 @@ import { FaixaTextos, FaixaWrapperSimples } from '@/components/ui/faixas/FaixaSt
 
 import { tags } from '@/helpers/dados';
 import { getSessao } from '@/helpers/session';
+import { Coluna6, Colunas } from '@/components/ui/colunas/Colunas';
+import { ModeloContainer } from '@/components/conteudo/Faixa1/Styles';
 
 const FaixaWrapperSucesso = styled(FaixaWrapperSimples)`
 background:url("/images/background-sucesso.jpg") no-repeat center center;
 background-size:cover;
 display:flex;
 flex-direction:column;
-padding:0 0 50px;
-`;
+padding:10rem 0 5rem;
 
-const LogoWrapper = styled.div`
-align-items:center;
-background-color:${(props) => props.theme.client.colors.primary};
-display:flex;
-justify-content:center;
-margin-bottom: 2rem;
-padding:20px 0;
-width: 100%;
-`;
-
-const LogoContainer = styled.div`
-height:61px;
-margin:auto;
-width:240px;
+@media (max-width: 900px) {
+  background-image:none;
+  background-color:#741734;
+}
 `;
 
 const FaixaTextoSucesso = styled(FaixaTextos)`
@@ -42,20 +33,34 @@ max-width: 900px;
 position: relative;
 `;
 
+const FaixaSucessoModeloContainer = styled(ModeloContainer)`
+transform:translate(-30%);
+width:350px;
+
+@media (max-width: 900px) {
+  left:100%;
+  transform:translate(-100%);
+  width:280px;
+}
+@media (max-width: 768px) {
+  display:none;
+}
+`;
+
 const TitleSucesso = styled(Title)`
-border: none;
+color: ${(props) => props.theme.client.colors.terciary};
 font-size:30px;
 font-weight: 400;
 text-align: center;
+text-transform: uppercase;
 
 span {
-  text-transform: uppercase;
-  color: ${(props) => props.theme.client.colors.primary};
+  color: ${(props) => props.theme.client.colors.terciary};
 }
 `;
 
 const TextoSucesso = styled.p`
-color:#000000;
+color:white;
 margin: 0 auto 30px;
 max-width: 900px;
 position: relative;
@@ -93,37 +98,39 @@ function Continue() {
       </Head>
 
       <FaixaWrapperSucesso>
-        <LogoWrapper>
-          <Container>
-            <LogoContainer>
-              <Image
-                src="/images/logo.png"
-                alt="Logo Porto do Sabor"
-                layout="responsive"
-                width="240"
-                height="61"
-                priority
-              />
-            </LogoContainer>
-          </Container>
-        </LogoWrapper>
-
         <Container>
-          <FaixaTextoSucesso>
-            <TitleSucesso fontColor="primary" margem="0 0 2rem">
-              <strong>
-                Falta pouco,
-                {" "}
-                <span>{leadNome ? leadNome.split(" ")[0] : ""}</span>!
-              </strong>
-            </TitleSucesso>
-            <TextoSucesso>
-              <strong>Conclua seu cadatro</strong>
-              , preencha os dados abaixo e tenha acesso a todo material da franquia.
-            </TextoSucesso>
+          <FaixaSucessoModeloContainer>
+            <Image
+              src="/images/faixa1/modelo.png"
+              alt="Modelo"
+              width="389"
+              height="638"
+            />
+          </FaixaSucessoModeloContainer>
+          <Colunas>
+            <Coluna6>
+              <FaixaTextoSucesso>
+                <TitleSucesso fontColor="primary" margem="0 0 2rem">
+                  <strong>
+                    Falta pouco,
+                    {" "}
+                    <span>{leadNome ? leadNome.split(" ")[0] : ""}</span>!
+                  </strong>
+                </TitleSucesso>
+                <TextoSucesso>
+                  Você está mais perto de ter seu
+                  {" "}
+                  <br />
+                  próprio negócio!  Conclua o cadastro
+                  {" "}
+                  <br />
+                  para receber a apresentação:
+                </TextoSucesso>
 
-            <FormularioContinue />
-          </FaixaTextoSucesso>
+                <FormularioContinue />
+              </FaixaTextoSucesso>
+            </Coluna6>
+          </Colunas>
         </Container>
       </FaixaWrapperSucesso>
     </>
