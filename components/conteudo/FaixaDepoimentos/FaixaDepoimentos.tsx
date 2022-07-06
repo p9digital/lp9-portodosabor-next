@@ -90,7 +90,7 @@ function FaixaDepoimentos({ callForm }: Props) {
 
               {
                 modelos.map((item) => (
-                  <Depoimento>
+                  <Depoimento key={item.id}>
                     <FaixaDepoimentoTitulo dangerouslySetInnerHTML={{ __html: item.header }} />
                     <FaixaDepoimentoSubtitulo dangerouslySetInnerHTML={{ __html: item.subheader }} />
 

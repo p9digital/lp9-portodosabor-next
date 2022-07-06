@@ -17,8 +17,9 @@ const Faixa3 = dynamic(() => import('@/components/conteudo/Faixa3'));
 const Faixa4 = dynamic(() => import('@/components/conteudo/Faixa4'));
 const Faixa5 = dynamic(() => import('@/components/conteudo/Faixa5'));
 const Faixa6 = dynamic(() => import('@/components/conteudo/Faixa6'));
-const FaixaDepoimentos = dynamic(() => import('@/components/conteudo/FaixaDepoimentos'));
 const Faixa7 = dynamic(() => import('@/components/conteudo/Faixa7'));
+const Faixa8 = dynamic(() => import('@/components/conteudo/Faixa8'));
+const Faixa9 = dynamic(() => import('@/components/conteudo/Faixa9'));
 
 const MascaraCallForm = styled.div<{ativo: boolean}>`
 background-color: ${(props) => (props.ativo ? 'rgba(0,0,0,0.5)' : 'inherit')};
@@ -45,7 +46,6 @@ z-index: 100;
 @media (max-width: 900px) {
   align-items: center;
   align-content: center;
-  background-color:#012A08;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,9 +58,7 @@ export const FormMobile = styled.div`
 align-items:center;
 display:none;
 justify-content:center;
-margin-bottom:5rem;
-margin-top:5rem;
-padding:5rem 0;
+padding:2rem 0;
 
 @media (max-width:900px) {
   display:flex;
@@ -142,10 +140,6 @@ function Home() {
       <Faixa1 />
       <Faixa2 callForm={callForm} />
       <Faixa3 callForm={callForm} />
-      <Faixa4 callForm={callForm} />
-      <Faixa5 callForm={callForm} />
-      <Faixa6 />
-      <FaixaDepoimentos callForm={callForm} />
 
       <Element name="form">
         <FormWrapper fixar={FormFixo}>
@@ -153,7 +147,12 @@ function Home() {
         </FormWrapper>
       </Element>
 
-      <Faixa7 callForm={callForm} />
+      <Faixa4 callForm={callForm} />
+      <Faixa5 callForm={callForm} />
+      <Faixa6 callForm={callForm} />
+      <Faixa7 />
+      <Faixa8 callForm={callForm} />
+      <Faixa9 callForm={callForm} />
 
       <MascaraCallForm ativo={destaqueForm} />
     </>

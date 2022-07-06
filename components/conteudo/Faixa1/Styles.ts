@@ -18,6 +18,9 @@ padding-top:25rem;
 @media (max-width: 900px) {
   padding-top:12rem;
 }
+@media (max-width: 600px) {
+  padding-top:0;
+}
 `;
 
 export const TopoContainer = styled(Container)`
@@ -62,6 +65,7 @@ z-index:2;
   width:389px;
 }
 @media (max-width:600px) {
+  width:250px;
 }
 `;
 
@@ -85,6 +89,9 @@ width:587px;
   margin-left:-35rem;
 }
 @media (max-width:600px) {
+  background-size:contain;
+  margin-left:-20rem;
+  width:420px;
 }
 `;
 
@@ -151,9 +158,8 @@ strong {
   font-size:25px;
   font-style:italic;
 }
-@media (max-width:600px) {
-  font-size:20px;
-
+@media (max-width: 600px) {
+  max-width:55%;
   br {
     display:none;
   }

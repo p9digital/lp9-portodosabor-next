@@ -2,12 +2,22 @@ import styled from "styled-components";
 import Title from "@/components/ui/tipografia/Title";
 import Paragraph from "@/components/ui/tipografia/Paragraph";
 import { FaixaWrapperSimples } from "@/components/ui/faixas/FaixaStyles";
+import { ButtonWrapper } from "../Faixa1/Styles";
+import { FormMobile } from "@/pages";
 
 export const Faixa5Wrapper = styled(FaixaWrapperSimples)`
-background: url("/images/faixa5/background-detalhe.png") no-repeat center right;
-background-color:#012A08;
-background-size:contain;
+background-image: url("/images/faixa5/background1.png"), url("/images/faixa5/background2.png");
+background-position: bottom left, top right;
+background-repeat: no-repeat;
+margin-top:-1px;
+padding-bottom:0;
 position:relative;
+z-index:2;
+
+@media (max-width:900px) {
+  background: url("/images/faixa5/background1.png") no-repeat bottom left;
+  background-size:200px;
+}
 `;
 
 export const Faixa5Titulo = styled(Title)`
@@ -33,7 +43,7 @@ text-transform:uppercase;
 `;
 
 export const Faixa5Texto = styled(Paragraph)`
-color:white;
+color:black;
 margin-bottom:2rem;
 `;
 
@@ -42,4 +52,16 @@ display:flex;
 flex-direction:column;
 gap:2rem;
 margin-bottom:5rem;
+`;
+
+export const Faixa5FormMobile = styled(FormMobile)`
+@media (max-width:900px) {
+  margin-bottom:-10rem;
+}
+`;
+
+export const ButtonWrapperDesktop = styled(ButtonWrapper)`
+@media (max-width:900px) {
+  display:none;
+}
 `;

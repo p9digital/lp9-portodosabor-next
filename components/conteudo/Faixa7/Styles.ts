@@ -1,41 +1,36 @@
-import Image from "next/image";
 import styled from "styled-components";
 
 import Title from "@/components/ui/tipografia/Title";
 import { FaixaWrapperSimples } from "@/components/ui/faixas/FaixaStyles";
 
 export const Faixa7Wrapper = styled(FaixaWrapperSimples)`
-background-color:#012A08;
-padding:100px 0;
+background:url("/images/faixa7/background.jpg") no-repeat center center;
+background-size:100% 100%;
+margin-top:-3rem;
+padding:10rem 0 20rem;
 position:relative;
 
-@media (max-width:600px) {
-  padding:50px 0;
-}
-`;
-
-export const Faixa7SetaWrapper = styled.div`
-left:100%;
-position:absolute;
-top:30%;
-transform:translate(-20%, 0);
-width:304px;
-
-@media (max-width:992px) {
-  top:50%;
-}
 @media (max-width:900px) {
-  display:none;
+  background-size:cover;
+}
+@media (max-width:600px) {
+  padding:10rem 0 25rem;
 }
 `;
 
-export const Faixa7Seta = styled(Image)`
+export const Faixa7TextoImagem = styled.div`
+margin-bottom:2rem;
+width:355px;
+
+@media (max-width:600px) {
+  font-size:2.4rem;
+}
 `;
 
 export const Faixa7Titulo = styled(Title)`
-color:${(props) => props.theme.client.colors.white};
-font-size:40px;
+font-size:30px;
 font-weight:bold;
+text-transform:uppercase;
 
 @media (max-width:600px) {
   font-size:2.4rem;
@@ -43,8 +38,9 @@ font-weight:bold;
 `;
 
 export const Faixa7Texto = styled.p`
-color:white;
-font-size:30px;
+color:black;
+font-size:20px;
+font-weight:bold;
 margin-bottom:4rem;
 
 @media (max-width:600px) {

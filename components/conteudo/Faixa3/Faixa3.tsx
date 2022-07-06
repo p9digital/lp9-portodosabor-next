@@ -1,40 +1,86 @@
 import Image from "next/image";
+
 import Container from "@/components/ui/containers/Container";
+import { Coluna7, Colunas } from "@/components/ui/colunas/Colunas";
+import ButtonPulse from "@/components/ui/buttons/ButtonPulse";
 
 import {
-  Faixa3Conteudo, Faixa3Texto, Faixa3Titulo, Faixa3Wrapper, ModeloContainer, ModeloContainerWrapper
+  Faixa3Conteudo, Faixa3Lista, Faixa3ListaItem, Faixa3ListaItemIcone, Faixa3ListaItemTexto, Faixa3Texto, Faixa3Titulo, Faixa3Video, Faixa3Wrapper
 } from "./Styles";
 import { ButtonWrapper } from "../Faixa1/Styles";
-
-import { Coluna5, Colunas } from "@/components/ui/colunas/Colunas";
-import ButtonPulse from "@/components/ui/buttons/ButtonPulse";
 
 type Props = {
   callForm: () => void
 }
 
 function Faixa3({ callForm }: Props) {
+  const itens = [
+    {
+      id: 1,
+      texto: "3 milhões <br />de clientes <br />por ano"
+    },
+    {
+      id: 2,
+      texto: "280 <br />colaboradores"
+    },
+    {
+      id: 3,
+      texto: "25 lojas <br />no Rio <br />de janeiro"
+    },
+  ];
+
   return (
     <Faixa3Wrapper>
       <Container>
         <Colunas>
-          <Coluna5>
+          <Coluna7>
             <Faixa3Conteudo>
-              <Faixa3Texto>
-                A Porto do Sabor é referência no Rio de Janeiro, com 25 lojas
-                {" "}
-                <br />
-                em operação e modelo de negócio com formatação sólida!
-              </Faixa3Texto>
               <Faixa3Titulo fontColor="primary" margem="0 0 2rem">
-                Faça parte de uma rede com mais
+                A PORTO DO SABOR É
                 {" "}
-                <br />
-                de 20 anos de experiência no ramo
+                <strong>
+                  MARCA
+                  {" "}
+                  <br />
+                  RECONHECIDA EM ALIMENTAÇÃO
+                  {" "}
+                  <br />
+                  SAUDÁVEL E AÇAÍ
+                </strong>
                 {" "}
-                <br />
-                e que oferece sabor com
+                NO RIO DE JANEIRO!
               </Faixa3Titulo>
+              <Faixa3Texto>
+                Quando uma empresa é administrada e operada com seriedade e comprometimento pela própria família, o sucesso é certo! Há 25 anos, a família Wolfram abriu sua primeira unidade no RJ e, desde então, vem conquistando mais clientes, que elegeram o nosso açaí como o <strong>“melhor do Rio de Janeiro”</strong>!
+              </Faixa3Texto>
+
+              <Faixa3Lista>
+                {
+                  itens.map((item, index) => (
+                    <Faixa3ListaItem key={index}>
+                      <Faixa3ListaItemIcone>
+                        <Image
+                          src="/images/icone-check.png"
+                          width="52"
+                          height="52"
+                        />
+                      </Faixa3ListaItemIcone>
+
+                      <Faixa3ListaItemTexto dangerouslySetInnerHTML={{ __html: item.texto }} />
+                    </Faixa3ListaItem>
+                  ))
+                }
+              </Faixa3Lista>
+
+              <Faixa3Video>
+                <iframe
+                  title="video"
+                  src="https://www.youtube.com/embed/ZimpB_f0cS4?rel=0&loop=1&controls=0"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+              </Faixa3Video>
 
               <ButtonWrapper>
                 <ButtonPulse
@@ -43,24 +89,12 @@ function Faixa3({ callForm }: Props) {
                   backPulse="primary"
                   onClick={() => callForm()}
                 >
-                  <span>SEJA UM FRANQUEADO</span>
+                  <span>SEJA UM FRANQUEADO!</span>
                 </ButtonPulse>
               </ButtonWrapper>
             </Faixa3Conteudo>
-          </Coluna5>
+          </Coluna7>
         </Colunas>
-
-        <ModeloContainerWrapper>
-          <ModeloContainer>
-            <Image
-              src="/images/faixa3/modelo.png"
-              alt="Modelo"
-              layout="responsive"
-              width="378"
-              height="707"
-            />
-          </ModeloContainer>
-        </ModeloContainerWrapper>
       </Container>
     </Faixa3Wrapper>
   );

@@ -9,10 +9,6 @@ background-size:cover;
 padding-bottom:8rem;
 position:relative;
 z-index:2;
-
-@media (max-width:900px) {
-  background:none;
-}
 `;
 
 export const Faixa2ImagensWrapper = styled.div`
@@ -34,6 +30,7 @@ export const Faixa2Titulo = styled(Title)`
 color:${(props) => props.theme.client.colors.white};
 
 @media (max-width:900px) {
+  font-size:18px;
   text-align:center;
 }
 `;
@@ -57,12 +54,23 @@ margin-bottom:15px;
 export const Faixa2TextoImagem = styled.div`
 position:relative;
 width:420px;
+
+@media (max-width:900px) {
+  margin:auto;
+}
 `;
 
 export const TijelaAcaiWrapper = styled.div`
 position:relative;
 max-width:804px;
 width:40vw;
+
+@media (max-width:900px) {
+  left:50%;
+  margin-bottom:-5rem;
+  margin-top:5rem;
+  transform:translate(-50%);
+}
 `;
 
 export const ListaItens = styled.div`

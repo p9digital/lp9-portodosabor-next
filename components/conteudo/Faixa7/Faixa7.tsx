@@ -1,71 +1,40 @@
 import Image from "next/image";
 
 import Container from "../../ui/containers/Container";
-import ButtonPulse from "../../ui/buttons/ButtonPulse";
 
 import {
   FaixaConteudoResponsive,
   Faixa1Textos,
-  ButtonWrapper,
-  SelosContainer,
 } from "../Faixa1/Styles";
 import {
-  Faixa7Seta,
-  Faixa7SetaWrapper,
+  Faixa7TextoImagem,
   Faixa7Texto, Faixa7Titulo, Faixa7Wrapper
 } from "./Styles";
 
-type Props = {
-  callForm: () => void
-}
-
-function Faixa7({ callForm }: Props) {
+function Faixa7() {
   return (
     <Faixa7Wrapper>
       <Container>
         <FaixaConteudoResponsive>
           <Faixa1Textos>
-            <Faixa7SetaWrapper>
-              <Faixa7Seta
-                alt="Seta"
-                src="/images/seta.png"
-                width="304"
-                height="166"
+            <Faixa7TextoImagem>
+              <Image
+                alt="Texto Porto do Sabor na mídia"
+                src="/images/faixa7/texto-porto-do-sabor-na-midia.png"
+                width="355"
+                height="88"
               />
-            </Faixa7SetaWrapper>
+            </Faixa7TextoImagem>
 
-            <Faixa7Titulo fontColor="preto" margem="0 0 2rem">
-              FAÇA PARTE DA
+            <Faixa7Titulo fontColor="secondary" margem="0 0 2rem">
+              Conheça o melhor açaí
               {" "}
-              EM IMPLANTES DO BRASIL!
+              <br />
+              da zona sul carioca!
             </Faixa7Titulo>
             <Faixa7Texto>
-              Tenha sua própria clínica odontológica
-              lucrativa e rentável com Porto do Sabor.
+              “A franquia Porto do Sabor possui um cardápio elaborado com ingredientes cuidadosamente selecionados. Esse cuidado e seleção fazem com que seus itens tenham uma excelente qualidade, contribuindo para a saúde.”
             </Faixa7Texto>
-
-            <ButtonWrapper>
-              <ButtonPulse
-                backColor="vanilla"
-                fontColor="primary"
-                backPulse="vanilla"
-                onClick={() => callForm()}
-              >
-                <span>Fale com um expansionista</span>
-              </ButtonPulse>
-            </ButtonWrapper>
-            <br />
-            <br />
-
-            <SelosContainer>
-              <Image
-                src="/images/selos-abf.png"
-                alt="Selos ABF"
-                layout="responsive"
-                width="243"
-                height="135"
-              />
-            </SelosContainer>
           </Faixa1Textos>
         </FaixaConteudoResponsive>
       </Container>

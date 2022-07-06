@@ -7,10 +7,8 @@ import {
   FaixaConteudoResponsive,
   Faixa1Textos,
   ButtonWrapper,
-  SelosContainer,
 } from "../Faixa1/Styles";
 import {
-  Faixa9Seta,
   Faixa9SetaWrapper,
   Faixa9Texto, Faixa9Titulo, Faixa9Wrapper
 } from "./Styles";
@@ -25,8 +23,20 @@ function Faixa9({ callForm }: Props) {
       <Container>
         <FaixaConteudoResponsive>
           <Faixa1Textos>
+            <ButtonWrapper>
+              <ButtonPulse
+                backColor="secondary"
+                fontColor="white"
+                backPulse="secondary"
+                onClick={() => callForm()}
+              >
+                <span>Conheça mais sobre a Porto do Sabor</span>
+              </ButtonPulse>
+            </ButtonWrapper>
+            <br />
+
             <Faixa9SetaWrapper>
-              <Faixa9Seta
+              <Image
                 alt="Seta"
                 src="/images/seta.png"
                 width="304"
@@ -35,37 +45,33 @@ function Faixa9({ callForm }: Props) {
             </Faixa9SetaWrapper>
 
             <Faixa9Titulo fontColor="preto" margem="0 0 2rem">
-              FAÇA PARTE DA
+              SEJA FRANQUEADO(A)
               {" "}
-              EM IMPLANTES DO BRASIL!
+              <br />
+              PORTO DO SABOR E TENHA
+              {" "}
+              <br />
+              <span>
+                ALTO FATURAMENTO COM O SETOR DE ALIMENTAÇÃO!
+              </span>
             </Faixa9Titulo>
             <Faixa9Texto>
-              Tenha sua própria clínica odontológica
-              lucrativa e rentável com Porto do Sabor.
+              ABRA UMA FRANQUIA PORTO
+              {" "}
+              <br />
+              DO SABOR NA SUA CIDADE!
             </Faixa9Texto>
 
             <ButtonWrapper>
               <ButtonPulse
-                backColor="vanilla"
+                backColor="terciary"
                 fontColor="primary"
-                backPulse="vanilla"
+                backPulse="terciary"
                 onClick={() => callForm()}
               >
-                <span>Fale com um expansionista</span>
+                <span>Baixe a apresentação de negócio</span>
               </ButtonPulse>
             </ButtonWrapper>
-            <br />
-            <br />
-
-            <SelosContainer>
-              <Image
-                src="/images/selos-abf.png"
-                alt="Selos ABF"
-                layout="responsive"
-                width="243"
-                height="135"
-              />
-            </SelosContainer>
           </Faixa1Textos>
         </FaixaConteudoResponsive>
       </Container>

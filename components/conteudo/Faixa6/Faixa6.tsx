@@ -6,61 +6,65 @@ import Container from "../../ui/containers/Container";
 // import { ButtonWrapper } from "../Faixa1/Styles";
 import {
   Faixa6Texto,
-  Faixa6TextoVideo,
-  Faixa6TextoVideoSeta,
+  Faixa6TextoTitulo,
   Faixa6Titulo,
   Faixa6Wrapper,
   ListaItens,
-  ModeloContainer
+  ListaItemModelo,
+  ListaItemModeloFotoWrapper,
+  ListaItemModeloTextos,
+  ListaItemModeloTexto,
+  ListaItemModeloFoto,
+  ListaItemModeloFotoTitulo
 } from "./Styles";
-import { Coluna5, Colunas } from "@/components/ui/colunas/Colunas";
-import { ListaItem } from "@/components/ui/listas/ListaItem";
+import { Coluna7, Colunas } from "@/components/ui/colunas/Colunas";
+import { ButtonWrapper } from "../Faixa1/Styles";
+import ButtonPulse from "@/components/ui/buttons/ButtonPulse";
 
-function Faixa6() {
+type Props = {
+  callForm: () => void
+}
+
+function Faixa6({ callForm }: Props) {
   const listaIcones = [
     {
       id: 1,
       fontSize: "18px",
-      icone: "/images/faixa6/icone1.png",
-      iconeSize: { height: "54", width: "54" },
+      icone: "/images/faixa6/modelo1.jpg",
+      iconeSize: { height: "204", width: "238" },
       size: "100%",
-      texto: "Infraestrutura moderna e completa",
+      modelo: "Container",
+      texto: "A partir de 280 mil",
       textColor: "black"
     },
     {
       id: 2,
       fontSize: "18px",
-      icone: "/images/faixa6/icone2.png",
-      iconeSize: { height: "53", width: "47" },
+      icone: "/images/faixa6/modelo2.jpg",
+      iconeSize: { height: "204", width: "238" },
       size: "100%",
-      texto: "Pioneirismo em odontologia digital",
+      modelo: "Food Truck",
+      texto: "A partir de 150 mil",
       textColor: "black"
     },
     {
       id: 3,
       fontSize: "18px",
-      icone: "/images/faixa6/icone3.png",
-      iconeSize: { height: "60", width: "60" },
+      icone: "/images/faixa6/modelo3.jpg",
+      iconeSize: { height: "204", width: "238" },
       size: "100%",
-      texto: "Tecnologia de ponta",
+      modelo: "Loja",
+      texto: "A partir de 470 mil",
       textColor: "black"
     },
     {
       id: 4,
       fontSize: "18px",
-      icone: "/images/faixa6/icone4.png",
-      iconeSize: { height: "57", width: "57" },
+      icone: "/images/faixa6/modelo4.jpg",
+      iconeSize: { height: "204", width: "238" },
       size: "100%",
-      texto: "Equipamentos de última geração",
-      textColor: "black"
-    },
-    {
-      id: 5,
-      fontSize: "18px",
-      icone: "/images/faixa6/icone5.png",
-      iconeSize: { height: "58", width: "54" },
-      size: "100%",
-      texto: "Troca de bandeira: rápida adaptação e implantação da clínica.",
+      modelo: "Quiosque",
+      texto: "A partir de 218 mil",
       textColor: "black"
     },
   ];
@@ -69,63 +73,64 @@ function Faixa6() {
     <Faixa6Wrapper id="faixa6">
       <Container>
         <Colunas>
-          <Coluna5>
+          <Coluna7>
+            <Faixa6TextoTitulo>
+              <Image
+                src="/images/faixa6/texto-modelo-de-negocio.png"
+                width="306"
+                height="79"
+              />
+            </Faixa6TextoTitulo>
+
+            <Faixa6Texto>
+              Escolha o melhor modelo para as necessidades de mercado locais.
+            </Faixa6Texto>
             <Faixa6Titulo fontColor="primary" margem="0 0 3rem">
-              CONHEÇA NOSSO MODELO
+              Já estão inclusos os valores com
               {" "}
               <br />
-              <strong>DE CLÍNICA ODONTOLÓGICA</strong>
+              taxa de franquia e estoque inicial!
             </Faixa6Titulo>
 
             <ListaItens>
               {
-                listaIcones.map((item) => <ListaItem key={item.id} item={item} />)
+                listaIcones.map((item) => (
+                  <ListaItemModelo key={item.id}>
+                    <ListaItemModeloFotoWrapper>
+                      <ListaItemModeloFotoTitulo>
+                        {item.modelo}
+                      </ListaItemModeloFotoTitulo>
+
+                      <ListaItemModeloFoto>
+                        <Image
+                          src={item.icone}
+                          width={item.iconeSize.width}
+                          height={item.iconeSize.height}
+                        />
+                      </ListaItemModeloFoto>
+                    </ListaItemModeloFotoWrapper>
+
+                    <ListaItemModeloTextos>
+                      <ListaItemModeloTexto>
+                        {item.texto}
+                      </ListaItemModeloTexto>
+                    </ListaItemModeloTextos>
+                  </ListaItemModelo>
+                ))
               }
             </ListaItens>
 
-            <Faixa6TextoVideo>
-              <Faixa6Texto>
-                Assista ao vídeo e
-                {" "}
-                <strong>
-                  confira
-                  {" "}
-                  <br />
-                  como é uma clínica Porto do Sabor!
-                </strong>
-              </Faixa6Texto>
-              <Faixa6TextoVideoSeta>
-                <Image
-                  src="/images/seta-video.png"
-                  alt="Seta"
-                  layout="responsive"
-                  width="139"
-                  height="120"
-                />
-              </Faixa6TextoVideoSeta>
-            </Faixa6TextoVideo>
-
-            <ModeloContainer>
-              <Image
-                src="/images/faixa6/modelo.png"
-                alt="Modelo"
-                layout="responsive"
-                width="700"
-                height="787"
-              />
-            </ModeloContainer>
-
-            {/* <ButtonWrapper>
+            <ButtonWrapper margem="0 0 -3rem">
               <ButtonPulse
                 backColor="primary"
                 fontColor="white"
                 backPulse="primary"
                 onClick={() => callForm()}
               >
-                <span>SEJA FRANQUEADO(A)!</span>
+                <span>Saiba tudo sobre o negócio</span>
               </ButtonPulse>
-            </ButtonWrapper> */}
-          </Coluna5>
+            </ButtonWrapper>
+          </Coluna7>
         </Colunas>
       </Container>
     </Faixa6Wrapper>

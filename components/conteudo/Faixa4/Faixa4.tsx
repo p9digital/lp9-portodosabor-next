@@ -12,10 +12,7 @@ function Faixa4({ callForm }: Props) {
       <Container>
         <Faixa4Conteudo>
           <Faixa4Texto onClick={() => callForm()}>
-            <span>FAÇA PARTE</span>
-            {" "}
-            <br />
-            <span>DA PORTO DO SABOR!</span>
+            <span>TENHA SEU PRÓPRIO NEGÓCIO COM A PORTO DO SABOR!</span>
           </Faixa4Texto>
         </Faixa4Conteudo>
       </Container>

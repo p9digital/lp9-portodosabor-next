@@ -1,13 +1,15 @@
 import Container from "../../ui/containers/Container";
 import ButtonPulse from "../../ui/buttons/ButtonPulse";
 
-import { ButtonWrapper, FaixaConteudoResponsive, Faixa1Textos } from "../Faixa1/Styles";
+import { FaixaConteudoResponsive, Faixa1Textos } from "../Faixa1/Styles";
 import {
-  Faixa5Subtitulo,
+  ButtonWrapperDesktop,
+  Faixa5FormMobile,
   Faixa5Texto,
   Faixa5Titulo, Faixa5Wrapper, ListaItens
 } from "./Styles";
 import { ListaItem } from "@/components/ui/listas/ListaItem";
+import FormularioHome from "@/components/formulario/FormularioHome";
 
 type Props = {
   callForm: () => void
@@ -18,34 +20,29 @@ function Faixa5({ callForm }: Props) {
     {
       id: 1,
       fontSize: "18px",
-      icone: "/images/faixa5/icone1.png",
-      iconeSize: { height: "43", width: "43" },
+      icone: "/images/icone-check.png",
+      iconeSize: { height: "52", width: "52" },
       size: "100%",
-      texto: "<strong>Modelo de negócio à prova de crises:</strong> por ser um serviço de saúde, é essencial à população e sempre haverá demanda."
+      texto: "8 a cada 10 brasileiros buscam uma alimentação saudável",
+      textColor: "black"
     },
     {
       id: 2,
       fontSize: "18px",
-      icone: "/images/faixa5/icone2.png",
-      iconeSize: { height: "42", width: "42" },
+      icone: "/images/icone-check.png",
+      iconeSize: { height: "52", width: "52" },
       size: "100%",
-      texto: "<strong>600% de crescimento</strong> de 2020 a 2022"
+      texto: "Faturamento do setor de alimentação <strong>aumentou 14,5% entre 2021 e 2022</strong>, segundo a ABF.",
+      textColor: "black"
     },
     {
       id: 3,
       fontSize: "18px",
-      icone: "/images/faixa5/icone3.png",
-      iconeSize: { height: "45", width: "37" },
+      icone: "/images/icone-check.png",
+      iconeSize: { height: "52", width: "52" },
       size: "100%",
-      texto: "<strong>+de 3 milhões</strong> de atendimentos por ano"
-    },
-    {
-      id: 4,
-      fontSize: "18px",
-      icone: "/images/faixa5/icone4.png",
-      iconeSize: { height: "45", width: "45" },
-      size: "100%",
-      texto: "<strong>Aumento de 52% no faturamento</strong> nos últimos 2 anos"
+      texto: "Setor de açaí é um mercado bilionário (US$ 1,5 bilhão por ano, segundo Sindifrutas) e muito procurado no país e no exterior!",
+      textColor: "black"
     }
   ];
 
@@ -54,25 +51,20 @@ function Faixa5({ callForm }: Props) {
       <Container>
         <FaixaConteudoResponsive>
           <Faixa1Textos>
-            <Faixa5Titulo fontColor="white" margem="0 0 2rem">
-              SE VOCÊ QUER EXCELÊNCIA,
+            <Faixa5Titulo fontColor="primary" margem="0 0 2rem">
+              FAÇA PARTE DO CRESCIMENTO DO
               {" "}
               <br />
-              <strong>SEJA FRANQUEADO PORTO DO SABOR!</strong>
+              RAMO DA ALIMENTAÇÃO COM A
+              {" "}
+              <br />
+              PORTO DO SABOR!
             </Faixa5Titulo>
-            <Faixa5Subtitulo fontColor="primary" margem="0 0 2rem">
-              Investir na Porto do Sabor é começar
-              {" "}
-              <br />
-              um negócio já sendo
-              {" "}
-              <strong>o Nº1 do Brasil!</strong>
-            </Faixa5Subtitulo>
             <Faixa5Texto>
-              Se você é dentista ou investidor e busca um jeito bastante simplificado de abrir uma lucrativa clínica odontológica, evitando as burocracias e dores de cabeça, fazer parte de uma rede de franquias é a melhor opção!
+              A população brasileira está mais preocupada com a alimentação, principalmente após o cenário pandêmico dos últimos anos. Com isso, o setor de alimentação saudável cresceu exponencialmente desde 2020!
             </Faixa5Texto>
             <Faixa5Texto>
-              No caso da Porto do Sabor, oferecemos todas as soluções em gestão e na parte comercial, além do nosso modelo de negócio ser 100% estruturado e com os processos formados.
+              Os índices de crescimento do setor surpreenderam o mercado:
             </Faixa5Texto>
 
             <ListaItens>
@@ -81,16 +73,20 @@ function Faixa5({ callForm }: Props) {
               }
             </ListaItens>
 
-            <ButtonWrapper>
+            <Faixa5FormMobile>
+              <FormularioHome />
+            </Faixa5FormMobile>
+
+            <ButtonWrapperDesktop margem="0 0 -3rem">
               <ButtonPulse
-                backColor="vanilla"
-                fontColor="primary"
-                backPulse="vanilla"
+                backColor="primary"
+                fontColor="white"
+                backPulse="primary"
                 onClick={() => callForm()}
               >
-                <span>ABRA SUA FRANQUIA PORTO DO SABOR</span>
+                <span>ABRA SUA FRANQUIA!</span>
               </ButtonPulse>
-            </ButtonWrapper>
+            </ButtonWrapperDesktop>
           </Faixa1Textos>
         </FaixaConteudoResponsive>
       </Container>
