@@ -22,7 +22,7 @@ function Faixa2({ callForm }: Props) {
       id: 1,
       icone: "/images/faixa2/icone1.png",
       iconeSize: { height: "37", width: "41" },
-      texto: "Investimento a partir de R$ 150 mil"
+      texto: "Investimento a partir de R$ 180 mil"
     },
     {
       id: 2,
@@ -87,7 +87,7 @@ function Faixa2({ callForm }: Props) {
             </FormMobile>
 
             <Faixa2Texto>
-              A Porto do Sabor é referência no Rio de Janeiro, com 25 lojas
+              O Porto do Sabor é referência no Rio de Janeiro, com 25 lojas
               {" "}
               <br />
               em operação e modelo de negócio com formatação sólida!

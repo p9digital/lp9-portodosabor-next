@@ -9,7 +9,7 @@ export const tags = {
 };
 
 export const capitais = [
-  'Tenho entre R$ 150 mil e R$ 300 mil',
+  'Tenho entre R$ 180 mil e R$ 300 mil',
   'Tenho entre R$ 300 mil e R$ 400 mil',
   'Tenho mais de R$ 400 mil',
   'Informar outro valor:',

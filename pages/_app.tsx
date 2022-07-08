@@ -9,7 +9,7 @@ import Layout from '../components/layout/Layout';
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     TagManager.initialize({
-      gtmId: 'GTM-KMRMKH2',
+      gtmId: 'GTM-T2LFJWZ',
     });
   }, []);
 

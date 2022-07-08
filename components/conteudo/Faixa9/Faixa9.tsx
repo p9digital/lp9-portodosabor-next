@@ -30,7 +30,7 @@ function Faixa9({ callForm }: Props) {
                 backPulse="secondary"
                 onClick={() => callForm()}
               >
-                <span>Conheça mais sobre a Porto do Sabor</span>
+                <span>Conheça mais sobre o Porto do Sabor</span>
               </ButtonPulse>
             </ButtonWrapper>
             <br />

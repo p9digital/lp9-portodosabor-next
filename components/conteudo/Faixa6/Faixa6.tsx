@@ -44,7 +44,7 @@ function Faixa6({ callForm }: Props) {
       iconeSize: { height: "204", width: "238" },
       size: "100%",
       modelo: "Food Truck",
-      texto: "A partir de 150 mil",
+      texto: "A partir de 180 mil",
       textColor: "black"
     },
     {

@@ -55,7 +55,7 @@ function Faixa5({ callForm }: Props) {
               FAÇA PARTE DO CRESCIMENTO DO
               {" "}
               <br />
-              RAMO DA ALIMENTAÇÃO COM A
+              RAMO DA ALIMENTAÇÃO COM O
               {" "}
               <br />
               PORTO DO SABOR!
