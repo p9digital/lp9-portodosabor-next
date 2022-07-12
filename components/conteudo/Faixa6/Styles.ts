@@ -15,7 +15,7 @@ export const Faixa6Wrapper = styled(FaixaWrapperSimples)`
 
 export const Faixa6TextoTitulo = styled.div`
   margin-bottom: 5rem;
-  width: 306px;
+  width: min(100%, 306px);
 
   @media (max-width: 900px) {
     margin: 2rem auto 5rem;
