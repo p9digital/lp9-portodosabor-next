@@ -9,21 +9,18 @@ import {
   Faixa6TextoTitulo,
   Faixa6Titulo,
   Faixa6Wrapper,
-  ListaItens,
-  ListaItemModelo,
-  ListaItemModeloFotoWrapper,
-  ListaItemModeloTextos,
-  ListaItemModeloTexto,
-  ListaItemModeloFoto,
-  ListaItemModeloFotoTitulo
+  CardsContainer,
+  Card,
+  CardImage,
+  CardText,
 } from "./Styles";
 import { Coluna7, Colunas } from "@/components/ui/colunas/Colunas";
 import { ButtonWrapper } from "../Faixa1/Styles";
 import ButtonPulse from "@/components/ui/buttons/ButtonPulse";
 
 type Props = {
-  callForm: () => void
-}
+  callForm: () => void;
+};
 
 function Faixa6({ callForm }: Props) {
   const listaIcones = [
@@ -35,7 +32,7 @@ function Faixa6({ callForm }: Props) {
       size: "100%",
       modelo: "Container",
       texto: "A partir de 280 mil",
-      textColor: "black"
+      textColor: "black",
     },
     {
       id: 2,
@@ -45,7 +42,7 @@ function Faixa6({ callForm }: Props) {
       size: "100%",
       modelo: "Food Truck",
       texto: "A partir de 180 mil",
-      textColor: "black"
+      textColor: "black",
     },
     {
       id: 3,
@@ -55,7 +52,7 @@ function Faixa6({ callForm }: Props) {
       size: "100%",
       modelo: "Loja",
       texto: "A partir de 470 mil",
-      textColor: "black"
+      textColor: "black",
     },
     {
       id: 4,
@@ -65,7 +62,7 @@ function Faixa6({ callForm }: Props) {
       size: "100%",
       modelo: "Quiosque",
       texto: "A partir de 218 mil",
-      textColor: "black"
+      textColor: "black",
     },
   ];
 
@@ -86,39 +83,28 @@ function Faixa6({ callForm }: Props) {
               Escolha o melhor modelo para as necessidades de mercado locais.
             </Faixa6Texto>
             <Faixa6Titulo fontColor="primary" margem="0 0 3rem">
-              Já estão inclusos os valores com
-              {" "}
-              <br />
+              Já estão inclusos os valores com <br />
               taxa de franquia e estoque inicial!
             </Faixa6Titulo>
 
-            <ListaItens>
-              {
-                listaIcones.map((item) => (
-                  <ListaItemModelo key={item.id}>
-                    <ListaItemModeloFotoWrapper>
-                      <ListaItemModeloFotoTitulo>
-                        {item.modelo}
-                      </ListaItemModeloFotoTitulo>
-
-                      <ListaItemModeloFoto>
-                        <Image
-                          src={item.icone}
-                          width={item.iconeSize.width}
-                          height={item.iconeSize.height}
-                        />
-                      </ListaItemModeloFoto>
-                    </ListaItemModeloFotoWrapper>
-
-                    <ListaItemModeloTextos>
-                      <ListaItemModeloTexto>
-                        {item.texto}
-                      </ListaItemModeloTexto>
-                    </ListaItemModeloTextos>
-                  </ListaItemModelo>
-                ))
-              }
-            </ListaItens>
+            <CardsContainer>
+              {listaIcones.map((item) => (
+                <Card key={item.id}>
+                  <CardImage>
+                    <Image
+                      src={item.icone}
+                      width={item.iconeSize.width}
+                      height={item.iconeSize.height}
+                      layout="responsive"
+                    />
+                  </CardImage>
+                  <CardText>
+                    <p>{item.modelo}</p>
+                    <span>{item.texto}</span>
+                  </CardText>
+                </Card>
+              ))}
+            </CardsContainer>
 
             <ButtonWrapper margem="0 0 -3rem">
               <ButtonPulse

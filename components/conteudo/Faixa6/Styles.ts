@@ -5,107 +5,125 @@ import Title from "@/components/ui/tipografia/Title";
 import { FaixaWrapperSimples } from "@/components/ui/faixas/FaixaStyles";
 
 export const Faixa6Wrapper = styled(FaixaWrapperSimples)`
-background-color:${(props) => props.theme.client.colors.secondary};
-margin-top:-3px;
-padding-bottom:0;
-padding-top:10rem;
-position:relative;
-z-index:1;
+  background-color: ${(props) => props.theme.client.colors.secondary};
+  margin-top: -3px;
+  padding-bottom: 0;
+  padding-top: 10rem;
+  position: relative;
+  z-index: 1;
 `;
 
 export const Faixa6TextoTitulo = styled.div`
-margin-bottom:5rem;
-width:306px;
+  margin-bottom: 5rem;
+  width: 306px;
 
-@media (max-width: 900px) {
-  margin:2rem auto 5rem;
-}
+  @media (max-width: 900px) {
+    margin: 2rem auto 5rem;
+  }
 `;
 
 export const Faixa6Titulo = styled(Title)`
-color:white;
-font-size:26px;
-text-transform:uppercase;
-@media (max-width: 900px) {
-  text-align:center;
-}
-@media (max-width: 600px) {
-  font-size:22px;
-}
+  color: white;
+  font-size: 26px;
+  text-transform: uppercase;
+  @media (max-width: 900px) {
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
 `;
 
 export const Faixa6Texto = styled.p`
-color:white;
-font-size:16px;
-line-height:1.2;
-margin-bottom:15px;
+  color: white;
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 15px;
 
-strong {
-  font-weight:900;
-}
-@media (max-width:900px) {
-  text-align:center;
-}
-@media (max-width:600px) {
-  font-size:25px;
-  br {
-    display:none;
+  strong {
+    font-weight: 900;
   }
-}
+  @media (max-width: 900px) {
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    font-size: 25px;
+    br {
+      display: none;
+    }
+  }
 `;
 
-export const ListaItens = styled.div`
-display:grid;
-gap:5rem 0;
-grid-template:"grid1 grid2"
-"grid3 grid4";
-margin-bottom:5rem;
+export const CardsContainer = styled.div`
+  width: 100%;
+  margin-bottom: 50px;
 
-@media (max-width:600px) {
-  gap:2rem 0;
-  grid-template:"grid1"
-  "grid2"
-  "grid3"
-  "grid4";
-}
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @media (max-width: 900px) {
+    align-items: center;
+  }
 `;
 
-export const ListaItemModelo = styled.div`
-display:flex;
-flex-direction:column;
-max-width:250px;
+export const Card = styled.div`
+  background-color: #fff;
+  width: min(100%, 450px);
+  position: relative;
+  display: flex;
 
-@media (max-width:600px) {
-  margin:auto;
-}
+  @media (max-width: 500px) {
+    width: min(100%, 300px);
+    flex-direction: column;
+  }
 `;
 
-export const ListaItemModeloFotoWrapper = styled.div`
-background-color:${(props) => props.theme.client.colors.primary};
-margin-bottom:5rem;
+export const CardImage = styled.div`
+  width: 60%;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
-export const ListaItemModeloFotoTitulo = styled.p`
-color:white;
-font-weight:bold;
-padding:1rem 2rem;
-text-transform:uppercase;
-`;
+export const CardText = styled.div`
+  width: 40%;
+  padding: 50px 20px;
+  @media (max-width: 500px) {
+    width: 100%;
+    padding: 20px;
+  }
 
-export const ListaItemModeloFoto = styled.div`
-margin-bottom:-4rem;
-margin-left:2rem;
-margin-right:-4rem;
-`;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-export const ListaItemModeloTextos = styled.div`
-border:2px solid ${(props) => props.theme.client.colors.terciary};
-padding:0.5rem 0;
-`;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  p {
+    background-color: ${(props) => props.theme.client.colors.primary};
+    padding: 5px 10px;
 
-export const ListaItemModeloTexto = styled.p`
-color:white;
-font-weight:bold;
-text-align:center;
-text-transform:uppercase;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+
+    @media (max-width: 500px) {
+      padding: 10px 20px;
+      width: fit-content;
+      font-size: 24px;
+
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  span {
+    display: block;
+    font-size: 21px;
+    font-weight: bold;
+    color: #000;
+  }
 `;
