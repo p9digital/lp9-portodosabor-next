@@ -260,7 +260,7 @@ function Finalizado() {
       <FaixaWrapperRedes>
         <FaixaTextos>
           <TitleFinalizado fontColor="white" margem="0 0 5rem">
-            SIGA A <strong>Porto do Sabor</strong> NAS REDES SOCIAIS:
+            SIGA O <strong>Porto do Sabor</strong> NAS REDES SOCIAIS:
           </TitleFinalizado>
 
           <RedesWrapper>
