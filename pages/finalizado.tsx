@@ -204,6 +204,11 @@ function Finalizado() {
               {leadNome && leadNome.nome ? leadNome.nome.split(' ')[0] : ''}!
             </strong>
           </TitleFinalizado>
+          <FinalizadoTexto>
+            <span>
+              Em breve entraremos em contato com você.
+            </span>
+          </FinalizadoTexto>
 
           {/* <FinalizadoTexto>
             <strong>
@@ -225,7 +230,7 @@ function Finalizado() {
             </LinkDownload>
           </LinkWrapper> */}
 
-          <FinalizadoTexto>
+          {/* <FinalizadoTexto>
             <span>
               Clique no botão abaixo e receba a apresentação do nosso modelo de negócio pelo WhatsApp!
             </span>
@@ -253,7 +258,7 @@ function Finalizado() {
                 <strong>Chamar no WhatsApp {leadNome.donoLead.numero}</strong>
               </p>
             </LinkDownload>
-          </LinkWrapper>
+          </LinkWrapper> */}
         </FaixaTextos>
       </FaixaWrapperFinal>
 
